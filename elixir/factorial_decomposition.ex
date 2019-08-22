@@ -24,7 +24,7 @@ defmodule FactDecomp do
         end
         custom_map(list, next, 1, result ++ res)
         else
-        custom_map(list, uniq, times+1, result)
+            custom_map(list, uniq, times+1, result)
         end   
     end
     
@@ -36,7 +36,7 @@ defmodule FactDecomp do
             factors_list(n, factors, d+1)
         end
         else
-        factors
+            factors
         end
     end
   

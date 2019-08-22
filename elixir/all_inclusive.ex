@@ -13,10 +13,10 @@ defmodule Allinclusive do
 
     defp gen_rots(strng, list, original) do
         if original == strng && list != [] do
-        gen_rots(list)
+            gen_rots(list)
         else
-        new_strng = swap(strng)
-        gen_rots(new_strng, [new_strng] ++ list, original)
+            new_strng = swap(strng)
+            gen_rots(new_strng, [new_strng] ++ list, original)
         end
     end
     
