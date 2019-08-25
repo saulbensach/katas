@@ -1,4 +1,7 @@
 <?php
+
+var_dump(multiply("12331234", "9871231236"));
+
 function multiply(string $a, string $b): string {
     // I WILL REFACTOR DON'T KILL ME!
     if($a == 0 || $b == 0) return "0";
@@ -45,18 +48,10 @@ function multiply(string $a, string $b): string {
     for($i = 0; $i < sizeof($sums); $i++){
         $current_value = $sums[$i] + $remainder;
         $remainder = 0;
-        if($current_value > 999){
+        if($current_value > 9){
             $val = $current_value."";
-            $sums[$i] = (int)$val[3];
-            $remainder = (int)($val[0] . "" . $val[1]. "" . $val[2]);
-        }else if($current_value > 99){
-            $val = $current_value."";
-            $sums[$i] = (int)$val[2];
-            $remainder = (int)($val[0] . "" . $val[1]);
-        }else if($current_value > 9){
-            $val = $current_value."";
-            $remainder = (int)$val[0];
-            $sums[$i] = (int)$val[1];
+            $sums[$i] = (int)substr($val, -1);
+            $remainder = (int)substr($val, 0, -1);
         }else{
             $sums[$i] = $current_value;
         }
